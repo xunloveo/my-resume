@@ -2,7 +2,7 @@
   <div>
     <canvas id="canvas"></canvas>
     <button class="btn"
-            @click="goHome">点击进入</button>
+            @click="goHome">点击进入<span></span></button>
   </div>
 </template>
 
@@ -310,14 +310,11 @@ export default {
 
 .btn {
   outline: 0 none;
-  color: #9248bc;
-  font-size: 16px;
+  color: #a751d0;
+  font-size: 20px;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  /* left: 50%;
-  top: 50%; */
-  /* transform: translate(-50%, -50%); */
   display: block;
   width: 100%;
   max-width: 250px;
@@ -326,100 +323,31 @@ export default {
   border-radius: 20px;
   cursor: pointer;
   overflow: hidden;
+  transition: color 0.4s;
 }
 
-.btn:before,
-.btn:after {
-  transition: 0.5s;
+.btn span {
   position: absolute;
-  z-index: -1;
-  top: 50%;
-  content: '';
-  width: 20px;
-  height: 20px;
-  background: #7f28b0;
+  display: block;
+  width: 0;
+  height: 0;
   border-radius: 50%;
-}
-
-.btn:before {
-  left: -20px;
+  background: #5b1e78;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  /*     animation: criss-cross-left 0.8s reverse; */
+  -webkit-transition: width 0.4s, height 0.4s;
+  transition: width 0.4s, height 0.4s;
+  z-index: -1;
 }
-.btn:after {
-  right: -20px;
-  -webkit-transform: translate(50%, -50%);
-  transform: translate(50%, -50%);
-  /*     animation: criss-cross-right 0.8s reverse; */
+.btn:hover {
+  color: #fff;
+  /* border-color: #5b1e78; */
 }
-.btn:hover:before {
-  -webkit-animation: criss-cross-left 0.8s both;
-  animation: criss-cross-left 0.8s both;
+.btn:hover span {
+  width: 562.5px;
+  height: 562.5px;
 }
-.btn:hover:after {
-  -webkit-animation: criss-cross-right 0.8s both;
-  animation: criss-cross-right 0.8s both;
-}
-
-@-webkit-keyframes criss-cross-left {
-  0% {
-    left: -20px;
-  }
-  50% {
-    left: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    left: 50%;
-    width: 375px;
-    height: 375px;
-  }
-}
-@keyframes criss-cross-left {
-  0% {
-    left: -20px;
-  }
-  50% {
-    left: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    left: 50%;
-    width: 375px;
-    height: 375px;
-  }
-}
-@-webkit-keyframes criss-cross-right {
-  0% {
-    right: -20px;
-  }
-  50% {
-    right: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    right: 50%;
-    width: 375px;
-    height: 375px;
-  }
-}
-@keyframes criss-cross-right {
-  0% {
-    right: -20px;
-  }
-  50% {
-    right: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    right: 50%;
-    width: 375px;
-    height: 375px;
-  }
+.btn:active {
+  background: #9832c8;
 }
 </style>

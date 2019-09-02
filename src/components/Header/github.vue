@@ -1,8 +1,10 @@
 <template>
   <div id="contact">
-    <a href="https://github.com/xunloveo" title="github" target="_blank"
-      ><img src="@/assets/github.jpg" alt="github" width="40"
-    /></a>
+    <a href="https://github.com/xunloveo"
+       title="github"
+       target="_blank"><img src="@/assets/github.jpg"
+           alt="github"
+           width="40" /></a>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'Github'
 })
-export default class Github extends Vue {}
+export default class Github extends Vue { }
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +27,11 @@ export default class Github extends Vue {}
   img {
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.4) rotate(360deg);
+    }
   }
 }
 </style>

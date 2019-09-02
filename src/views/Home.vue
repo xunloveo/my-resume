@@ -7,7 +7,8 @@
     <avatar />
     <github />
 
-    <fullpage-bar :options="options" ref="fullpagebar" />
+    <fullpage-bar :options="options"
+                  ref="fullpagebar" />
   </div>
 </template>
 

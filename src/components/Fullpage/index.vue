@@ -2,7 +2,7 @@
   <div class="fullpage-bar">
     <ul id="menu">
       <li data-menuanchor="page1"
-          class="active"><a href="#page1">HOME </a></li>
+          class="active"><a href="#page1">HOME</a></li>
       <li data-menuanchor="page2"><a href="#page2">第二屏</a></li>
       <li data-menuanchor="page3"><a href="#page3">第三屏</a></li>
     </ul>
@@ -10,8 +10,7 @@
                id="fullpage"
                :options="options">
       <div class="section">
-        <div class="container">HOME<el-button>dd</el-button>
-        </div>
+        <first-screen />
         <vue-particles color="#dedede"
                        class="particles-js" />
       </div>
@@ -61,8 +60,13 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
+import FirstScreen from './firstScreen.vue'
+
 @Component({
-  name: 'Fullpage'
+  name: 'Fullpage',
+  components: {
+    FirstScreen
+  }
 })
 export default class Fullpage extends Vue {
   @Prop({ required: true }) private options!: object
@@ -190,28 +194,6 @@ export default class Fullpage extends Vue {
     border: 0 none;
   }
 
-  // .fp-controlArrow.fp-prev {
-  //   left: 35px;
-  // }
-
-  // .fp-controlArrow.fp-next {
-  //   right: 35px;
-  // }
-
-  // .fp-controlArrow {
-  //   width: 70px;
-  //   height: 90px;
-  //   margin-top: -45px;
-  // }
-
-  // .fp-controlArrow svg {
-  //   padding: 5px;
-  // }
-
-  // .fp-controlArrow svg:hover polyline {
-  //   stroke-width: 6px;
-  // }
-
   polyline {
     transition: all 250ms ease-in-out;
     stroke-width: 3px;
@@ -231,6 +213,9 @@ export default class Fullpage extends Vue {
     color: #fff;
     position: relative;
     z-index: 999;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 </style>
