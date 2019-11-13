@@ -32,7 +32,6 @@ export default class Header extends Vue {
   }
 
   mounted() {
-    console.log(this.$route)
     if (!this.$route.params.playAudio) return
     let audioE = this.$refs.player
     if (audioE.paused) {
@@ -47,7 +46,7 @@ export default class Header extends Vue {
 <style lang="scss" scoped>
 #avatar {
   position: fixed;
-  z-index: 99;
+  z-index: 999;
   top: 10px;
   left: 10px;
 

@@ -1,10 +1,10 @@
 <template>
   <div class="fullpage-bar">
     <ul id="menu">
-      <li data-menuanchor="page1"
-          class="active"><a href="#page1">HOME</a></li>
-      <li data-menuanchor="page2"><a href="#page2">第二屏</a></li>
-      <li data-menuanchor="page3"><a href="#page3">第三屏</a></li>
+      <li data-menuanchor="about"
+          class="active"><a href="#about">HOME</a></li>
+      <li data-menuanchor="experience"><a href="#experience">EXPERIENCE</a></li>
+      <li data-menuanchor="contact"><a href="#contact">CONTACT</a></li>
     </ul>
     <full-page ref="fullpage"
                id="fullpage"
@@ -14,8 +14,9 @@
         <vue-particles color="#dedede"
                        class="particles-js" />
       </div>
-      <div class="section">
-        <div class="prev"
+      <div class="section experience-section">
+        <experience></experience>
+        <!-- <div class="prev"
              @mouseenter="stop"
              @mouseleave="start"
              @click="moveSlideLeft">
@@ -51,9 +52,11 @@
         </div>
         <div class="slide">slide 1</div>
         <div class="slide">slide 2</div>
-        <div class="slide">slide 3</div>
+        <div class="slide">slide 3</div> -->
       </div>
-      <div class="section">第三屏</div>
+      <div class="section">
+        <contact></contact>
+      </div>
     </full-page>
   </div>
 </template>
@@ -61,11 +64,15 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import FirstScreen from './firstScreen.vue'
+import Experience from './experience.vue'
+import Contact from './contact.vue'
 
 @Component({
   name: 'Fullpage',
   components: {
-    FirstScreen
+    FirstScreen,
+    Experience,
+    Contact
   }
 })
 export default class Fullpage extends Vue {
@@ -141,6 +148,7 @@ export default class Fullpage extends Vue {
   #menu li a {
     text-decoration: none;
     color: #fff;
+    font-size: 2rem;
     padding: 0 1.1em 1.1em 1.1em;
     position: relative;
   }
@@ -216,6 +224,10 @@ export default class Fullpage extends Vue {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .experience-section {
+    background: url(../../assets/experience.png);
   }
 }
 </style>
