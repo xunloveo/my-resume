@@ -1,5 +1,5 @@
 <template>
-  <div id="contact">
+  <div id="contact-github">
     <a href="https://github.com/xunloveo"
        title="github"
        target="_blank"><img src="@/assets/github.jpg"
@@ -18,7 +18,7 @@ export default class Github extends Vue { }
 </script>
 
 <style lang="scss" scoped>
-#contact {
+#contact-github {
   position: fixed;
   right: 10px;
   top: 20px;

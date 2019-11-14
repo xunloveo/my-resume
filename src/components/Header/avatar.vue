@@ -1,13 +1,15 @@
 <template>
   <div id="avatar">
-    <img src="@/assets/xsx.jpg" alt="头像" width="80" />
-    <img
-      src="@/assets/music.gif"
-      width="30"
-      class="music"
-      @click="audioClick"
-    />
-    <audio ref="player" loop>
+    <img src="@/assets/xsx.jpg"
+         alt="头像"
+         width="80" />
+    <img src="@/assets/music.gif"
+         width="30"
+         class="music"
+         :class="{'rotate': isPlayed}"
+         @click="audioClick" />
+    <audio ref="player"
+           loop>
       <source src="@/assets/audio/never.mp3" />
     </audio>
   </div>
@@ -22,6 +24,8 @@ export default class Header extends Vue {
     player: HTMLAudioElement
   }
 
+  isPlayed: Boolean = false
+
   audioClick() {
     let audioE = this.$refs.player
     if (audioE.paused) {
@@ -32,13 +36,22 @@ export default class Header extends Vue {
   }
 
   mounted() {
-    if (!this.$route.params.playAudio) return
     let audioE = this.$refs.player
+    // 监听是否播放 
+    audioE.addEventListener('pause', () => {
+      this.isPlayed = false
+    })
+    audioE.addEventListener('play', () => {
+      this.isPlayed = true
+    })
+    if (!this.$route.params.playAudio) return
     if (audioE.paused) {
       audioE.play()
     } else {
       audioE.pause()
     }
+
+
   }
 }
 </script>
@@ -52,7 +65,10 @@ export default class Header extends Vue {
 
   img {
     border-radius: 50%;
-    animation: avatarRotate 5s ease-in-out infinite;
+
+    &.rotate {
+      animation: avatarRotate 5s ease-in-out infinite;
+    }
   }
 }
 

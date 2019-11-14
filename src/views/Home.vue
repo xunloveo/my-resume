@@ -1,9 +1,5 @@
 <template>
   <div class="home">
-    <!-- <count-to :start-val="0"
-              :end-val="13600"
-              :duration="3600"
-              class="card-panel-num" /> -->
     <avatar />
     <github />
 
@@ -14,7 +10,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import CountTo from 'vue-count-to'
 import Avatar from '@/components/Header/avatar.vue'
 import Github from '@/components/Header/github.vue'
 import FullpageBar from '@/components/Fullpage/index.vue'
@@ -22,7 +17,6 @@ import FullpageBar from '@/components/Fullpage/index.vue'
 @Component({
   components: {
     Avatar,
-    CountTo,
     Github,
     FullpageBar
   }

@@ -7,6 +7,7 @@ import VueFullPage from 'vue-fullpage.js' // 全屏滚动插件
 import VueParticles from 'vue-particles' // 小颗粒插件
 import VueTypedJs from 'vue-typed-js'
 import './plugins/element.js'
+import './assets/fonts/iconfont.css'
 
 Vue.config.productionTip = false
 Vue.use(VueFullPage)
