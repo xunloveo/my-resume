@@ -127,6 +127,9 @@ export default class Fullpage extends Vue {
 </script>
 
 <style lang="scss">
+#fp-nav ul li a span {
+  background: lightgreen;
+}
 .fullpage-bar {
   height: 100vh;
 

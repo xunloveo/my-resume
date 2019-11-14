@@ -32,7 +32,8 @@ export default class Home extends Vue {
     anchors: ['about', 'experience', 'contact'], // 锚连接
     sectionsColor: ['transparent', '#ff5f45', '#0798ec'],
     loopBottom: true, // 底部可以滑到顶部
-    navigation: true // 是否显示导航(小圆点)
+    navigation: true, // 是否显示导航(小圆点)
+    navigationTooltips: ['HOME', 'EXPERIENCE', 'CONTACT']
   }
 }
 </script>
