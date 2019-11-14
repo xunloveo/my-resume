@@ -1,5 +1,5 @@
 # my-resume
-
+  这是使用vue-cli3 + ts + vue-fullpage 搭建的 网页版简历
 ## Project setup
 ```
 npm install
